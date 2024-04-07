@@ -51,6 +51,9 @@ bindsym $mod+Right focus right
 # toggle workspace
 bindsym $mod+Tab exec i3-toggle-ws
 
+# toggle terminal
+bindsym $mod+Shift+t exec i3-toggle-terminal
+
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -170,7 +173,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 12
-    position top
+    position bottom
     status_command i3status-rs ~/.config/i3/bar_config.toml
     colors {
         separator #666666
@@ -220,10 +223,9 @@ bindsym $mod+Shift+f [class="^fm"] scratchpad show; move position center
 exec --no-startup-id kitty --name fm --class=fm ranger
 for_window [instance="^fm"] move scratchpad
 
-bindsym $mod+Shift+t [title="^dropdown"] scratchpad show; move position 300 30 
 exec --no-startup-id kitty --title=dropdown
-assign [instance="dropdown"] -> output primary
-for_window [title="^dropdown"] move scratchpad, resize set 1300 600 
+for_window [title="^dropdown"] move scratchpad
+#for_window [title="^dropdown"] move scratchpad, resize set 100 ppt 1 ppt
 
 bindsym $mod+Control+Shift+q [class="Qalculate-gtk"] scratchpad show; move position center
 exec --no-startup-id qalculate-gtk

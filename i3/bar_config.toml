@@ -6,9 +6,6 @@ theme = "solarized-dark"
 idle_bg = "#123456"
 idle_fg = "#abcdef"
 
-[icons]
-icons = "awesome6"
-
 [[block]]
 block = "cpu"
 format = " $icon $barchart "

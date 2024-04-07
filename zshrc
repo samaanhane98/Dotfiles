@@ -11,12 +11,16 @@ plugins=(
 	fzf
     	history-substring-search
     	colored-man-pages
-    	zsh-autosuggestions
-    	zsh-syntax-highlighting
-    	zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Manual Plugins
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Rust
+source "$HOME/.cargo/env"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -46,3 +50,5 @@ unsetopt BEEP
 alias cat="bat"
 alias arch="uname -m"
 alias copy='xclip -sel clip'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
